@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Disc Forum</title>
+        <meta charset="UTF-8" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/static/stylesheets/index.css" />
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    </head>
+    <body>
+
+        <div id="questionsListHeader">
+            <h1 id="questionsListHeaderLabel">Questions</h1>
+
+            <form id="askQuestionForm" action="/askQuestion">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                <input id="askQuestionButton" type="submit" value="Ask Question"/>
+            </form>
+        </div>
+
+        <div id="questionsList">
+            {{#questions}}
+            <div class="question">
+                <div class="left">
+                    <div class="questionVotes">{{votes}}</div>
+                    <span class="questionVotesLabel">votes</span>
+                </div>
+
+                <div class="main">
+                    <div><a class="questionTitle" href="/q?id={{id}}">{{title}}</a></div>
+
+                    <div class="questionInfo">
+                        <span>asked</span>
+                        <span class="questionDate">{{creationDateTime}}</span>
+                        <span>by</span>
+                        <span class="questionAuthor">{{author.username}}</span>
+                    </div>
+
+                    <ul class="questionTagsList">
+                        {{#tags}}
+                        <li class="questionTagsListItem"><a class="questionTag" href="#">{{name}}</a></li>
+                        {{/tags}}
+                    </ul>
+                </div>
+            </div>
+            {{/questions}}
+        </div>
+
+        <footer>
+            <ul>
+                {{#authorized}}
+                <li>
+                    <form id="logoutForm" method="post" action="/logout">
+                        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                        <input id="logoutButton" type="submit" value="Logout" />
+                    </form>
+                </li>
+                {{/authorized}}
+                {{^authorized}}
+                <li>
+                    <a id="loginButton" href="/login">Login</a>
+                </li>
+                <li>
+                    <a id="signUpButton" href="/registration">Sign Up</a>
+                </li>
+                {{/authorized}}
+            </ul>
+
+        </footer>
+    </body>
+</html>

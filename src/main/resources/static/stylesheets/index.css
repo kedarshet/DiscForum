@@ -1,0 +1,253 @@
+/*
+===============================================================================
+
+INDEX.HTML STYLESHEET
+
+===============================================================================
+*/
+
+body {
+    display: flex;
+    flex-direction: column;
+	margin: 0 auto;
+	padding: 0;
+	width: 640px;
+}
+
+/*
+===============================================================================
+
+QUESTIONS LIST HEADER
+
+===============================================================================
+*/
+
+#questionsListHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+/*
+=======================================
+«Questions» Label
+=======================================
+*/
+
+#questionsListHeaderLabel {
+    font: bold 26px "Lato";
+    margin: 0;
+}
+
+/*
+=======================================
+Ask Question Button
+=======================================
+*/
+
+#askQuestionForm {
+    margin: 0;
+}
+
+#askQuestionButton {
+    border: none;
+    padding: 10px;
+    background: #0095ff;
+    color: white;
+    border-top: 1px solid #73C5FF;
+    text-shadow: 1px 1px #666;
+    border-radius: 3px;
+    outline: none;
+    margin: 0;
+}
+
+#askQuestionButton:focus {
+    outline: none;
+}
+
+#askQuestionButton:hover {
+    cursor: pointer;
+    outline: none;
+    background: #0077cc;
+    border-top: 1px solid #0095ff;
+}
+
+#askQuestionButton:active {
+    background: #0064bd;
+    border-top: 1px solid #0064bd;
+}
+
+/*
+===============================================================================
+
+QUESTIONS LIST
+
+===============================================================================
+*/
+
+#questionsList {
+	padding: 20px 0;
+	width: 100%;
+}
+
+/*
+===============================================================================
+
+QUESTION BLOCK
+
+===============================================================================
+*/
+
+/*
+=======================================
+Main Question Block Style
+=======================================
+*/
+
+#questionsList > .question {
+	display: flex;
+	border-top: 1px solid #e3e3e3;
+	padding: 15px 0;
+	width: 100%;
+}
+
+#questionsList > .question:last-child {
+    border-bottom: 1px solid #e3e3e3;
+}
+
+#questionsList > .question > .left {
+	width: 40px;
+	text-align: center;
+	padding-right: 10px;
+}
+
+/*
+=======================================
+Question Title
+=======================================
+*/
+
+.questionTitle {
+	color: #23629F;
+	font: 17px "Lato";
+	text-decoration: none;
+}
+
+/*
+=======================================
+Question Votes
+=======================================
+*/
+
+.questionVotes {
+	font: 17px "Lato";
+	margin-bottom: 3px;
+}
+
+.questionVotesLabel {
+	font: 12px "Lato";
+}
+
+/*
+=======================================
+Question Tags List
+=======================================
+*/
+
+.questionTagsList {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.questionTagsListItem {
+	background: #f3f3f3;
+	font: 12px "Lato";
+	display: inline-flex;
+	padding: 3px 6px;
+}
+
+.questionTagsListItem:hover {
+	background: #ededed;
+	cursor: pointer;
+}
+
+.questionTag {
+	color: #23629F;
+	text-decoration: none;
+}
+
+/*
+=======================================
+Question Info
+=======================================
+*/
+
+.questionInfo {
+	margin-top: 3px;
+	font: 12px "Lato";
+}
+
+/*
+===============================================================================
+
+FOOTER
+
+===============================================================================
+*/
+
+footer {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 40px;
+    padding-top: 40px;
+}
+
+footer > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer > ul li {
+    display: inline;
+    margin: 0 2px;
+}
+
+#logoutForm {
+    margin: 0;
+}
+
+#logoutButton,
+#loginButton,
+#signUpButton {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    color: #666;
+    font: 12px "Lato";
+    outline: none;
+}
+
+#logoutButton:hover {
+    cursor: pointer;
+}
+
+#logoutButton:focus {
+    outline: none;
+}
+
+/*
+=======================================
+Copyright Label
+=======================================
+*/
+
+#copyrightLabel {
+    color: #666;
+    font: 12px "Lato";
+    margin-top: 5px;
+}

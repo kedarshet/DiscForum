@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ask Question | Disc Forum</title>
+        <meta charset="UTF-8" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/static/stylesheets/askQuestion.css" />
+        <link rel="stylesheet" href="/static/stylesheets/googlecode.css">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <script defer src="/static/libs/showdown.js"></script>
+        <script defer src="/static/libs/highlight.js"></script>
+        <script defer src="/static/scripts/previewQuestion.js"></script>
+        <script defer src="/static/scripts/questionEditor.js"></script>
+        <style>
+                .topnav {
+                  background-color: #333;
+                  overflow: hidden;
+                }
+
+                .topnav a {
+                  float: left;
+                  color: #f2f2f2;
+                  text-align: center;
+                  padding: 14px 16px;
+                  text-decoration: none;
+                  font-size: 17px;
+                }
+
+                /* Change the color of links on hover */
+                .topnav a:hover {
+                  background-color: #0077cc;
+                  color: black;
+                }
+
+                /* Add a color to the active/current link */
+                .topnav a.active {
+                  background-color: ##0077cc;
+                  color: white;
+                }
+                </style>
+    </head>
+    <body>
+    <div class="topnav">
+          <a class="active" href="/">Home</a>
+        </div>
+        <div id="askQuestionHeader">
+            <h1 id="askQuestionHeaderLabel">Ask Question</h1>
+        </div>
+
+        <form id="questionEditorForm" action="/askQuestion" method="post">
+            <div id="questionTitleInputContainer">
+                <label>Title
+                    <input autocomplete="off"
+                            autofocus
+                            required
+                            spellcheck="false"
+                            id="questionTitleInput"
+                            name="title"
+                            type="text"
+                            placeholder="e.g. Is there an R function for finding the index of an element in a vector?" />
+                </label>
+            </div>
+
+            <div id="questionBodyTextAreaContainer">
+                <label>Body
+                    <textarea autocomplete="off"
+                                required
+			        oninput="previewQuestionBody(this);"
+                                spellcheck="false"
+                                id="questionBodyTextArea"
+                                name="body"></textarea>
+                </label>
+            </div>
+
+	    <div id="questionBodyPreview">
+	    </div>
+
+            <div id="tagEditorContainer">
+                <span id="tagEditorLabel">Tags</span>
+                <span id="tagEditorSubLabel">Add up to 5 tags to describe what your question is about.</span>
+                <div tabindex="0" id="tagEditor">
+                    <span id="renderedTags"></span>
+                    <input autocomplete="off"
+                            spellcheck="false"
+                            oninput="tagEditorInputOnInput();"
+                            onfocus="addClass(document.getElementById('tagEditor'), 'tagEditorOnFocus');"
+                            onblur="removeClass(document.getElementById('tagEditor'), 'tagEditorOnFocus');"
+                            id="tagEditorInput" />
+                </div>
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+
+            <input id="tag0" type="hidden" name="tag" value="" />
+            <input id="tag1" type="hidden" name="tag" value="" />
+            <input id="tag2" type="hidden" name="tag" value="" />
+            <input id="tag3" type="hidden" name="tag" value="" />
+            <input id="tag4" type="hidden" name="tag" value="" />
+
+            <input id="askQuestionButton" type="submit" value="Post your question"/>
+        </form>
+
+        <footer>
+            {{#authorizedUser}}
+            <form id="logoutForm" method="post" action="/logout">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                <input id="logoutButton" type="submit" value="Logout" />
+            </form>
+            {{/authorizedUser}}
+        </footer>
+    </body>
+</html>

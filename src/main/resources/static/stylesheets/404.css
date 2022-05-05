@@ -1,0 +1,24 @@
+body {
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+}
+
+h1, h2 {
+    font-family: "Lato", "Arial";
+}
+
+h1 {
+    font-size: 37px;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+h2 {
+    font-size: 21px;
+    margin: 0 auto;
+    width: fit-content;
+    font-weight: normal;
+}

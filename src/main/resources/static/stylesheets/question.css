@@ -1,0 +1,474 @@
+/*
+===============================================================================
+
+QUESTION.HTML STYLESHEET
+
+===============================================================================
+*/
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	width: 640px;
+}
+
+/*
+===============================================================================
+
+QUESTION/ANSWER BLOCK
+
+===============================================================================
+*/
+
+/*
+=======================================
+Main Question/Answer Block Style
+=======================================
+*/
+
+.question,
+.answer {
+	display: flex;
+	width: 100%;
+	padding: 20px 0;
+}
+
+.question > .left,
+.answer > .left  {
+	width: 40px;
+	text-align: center;
+	padding-right: 15px;
+}
+
+.question > .main,
+.answer > .main {
+	min-width: 100%;
+    overflow: hidden;
+}
+
+/*
+=======================================
+Question/Answer Votes
+=======================================
+*/
+
+.questionVotes,
+.answerVotes {
+	font: 17px "Lato";
+}
+
+.votedUpByActiveUser,
+.votedDownByActiveUser {
+    fill: #f48024;
+}
+
+#questionVoteDownButton,
+#questionVoteUpButton,
+.answerVoteDownButton,
+.answerVoteUpButton {
+    margin: 0; border: none;
+    background: transparent;
+    padding: 0;
+    width: 100%;
+}
+
+#questionVoteDownButton:hover,
+#questionVoteUpButton:hover,
+.answerVoteDownButton:hover,
+.answerVoteUpButton:hover {
+    cursor: pointer;
+}
+
+#questionVoteDownButton:focus,
+#questionVoteUpButton:focus,
+.answerVoteDownButton:focus,
+.answerVoteUpButton:focus {
+    outline: none;
+}
+
+.voteForm {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+=======================================
+Question Title
+=======================================
+*/
+
+.questionTitleContainer {
+	margin-bottom: 10px;
+}
+
+.questionTitle {
+	color: #23629F;
+	text-decoration: none;
+	font: 17px "Lato";
+}
+
+/*
+=======================================
+Question Tags List
+=======================================
+*/
+
+.questionTagsList {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.questionTagsListItem {
+	background: #f3f3f3;
+	font: 12px "Lato";
+	display: inline-flex;
+	padding: 3px 6px;
+}
+
+.questionTagsListItem:hover {
+	background: #ededed;
+	cursor: pointer;
+}
+
+.questionTag {
+	color: #23629F;
+	text-decoration: none;
+}
+
+/*
+=======================================
+Question/Answer Info
+=======================================
+*/
+
+.questionInfo,
+.answerInfo {
+	margin-top: 3px;
+	font: 12px "Lato";
+}
+
+/*
+=======================================
+Question/Answer Body
+=======================================
+*/
+
+#questionBody p,
+#questionBody ul,
+#questionBody li,
+.answerBody p,
+.answerBody ul,
+.answerBody li {
+	font: 13px "Lato";
+	text-align: justify;
+	margin-top: 0;
+}
+
+#questionBody p code,
+.answerBody p code {
+	background: #f3f3f3;
+	padding: 1px 4px;
+}
+
+#questionBody a,
+.answerBody a {
+	color: #23629F;
+}
+
+#questionBody blockquote,
+.answerBody blockquote {
+	border-left: 3px solid #ccc;
+	margin-left: 0;
+	padding-left: 10px;
+}
+
+#questionBody blockquote:first-child,
+.answerBody blockquote:first-child {
+	margin-top: 0;
+}
+
+#questionBody h1,
+.answerBody h1 {
+    font: bold 21px "Lato";
+}
+
+#questionBody h1:first-child,
+.answerBody h1:first-child {
+    margin-top: 0;
+}
+
+#questionBody h2,
+.answerBody h2 {
+    font: bold 19px "Lato";
+}
+
+#questionBody h2:first-child,
+.answerBody h2:first-child {
+    margin-top: 0;
+}
+
+#questionBody h3,
+.answerBody h3 {
+    font: bold 17px "Lato";
+}
+
+#questionBody h3:first-child,
+.answerBody h3:first-child {
+    margin-top: 0;
+}
+
+#questionBody hr,
+.answerBody hr {
+    border: none;
+    background: #ccc;
+    height: 1px;
+}
+
+/*
+===============================================================================
+
+ANSWERS LIST
+
+===============================================================================
+*/
+
+#answersCountHeader {
+	font: bold 19px "Lato";
+	margin: 20px auto;
+}
+
+.answer {
+	border-top: 1px solid #ccc;
+}
+
+.answer:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+/*
+===============================================================================
+
+«Your Answer» Label
+
+===============================================================================
+*/
+
+#yourAnswerLabel {
+    font: 21px "Lato";
+    margin-top: 40px;
+}
+
+/*
+===============================================================================
+
+Answer Editor Form
+
+===============================================================================
+*/
+
+#answerBodyTextArea {
+    border: 1px solid rgb(187, 192, 196);
+    border-radius: 3px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    outline: none;
+    resize: vertical;
+    font: 13px "Iosevka SS03", "Consolas", monospace;
+    padding: 12px;
+    min-height: 200px;
+}
+
+#answerBodyTextArea:focus {
+    border-color: #6cbbf7;
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+    outline: 0;
+}
+
+#answerBodyTextArea::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+#answerBodyTextArea::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+#answerBodyTextArea:hover:-webkit-scrollbar-thumb {
+    cursor: grab;
+}
+
+#answerBodyTextArea::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+#answerBodyTextArea::-webkit-resizer {
+    border: none;
+    background: #f5f5f5;
+}
+
+/*
+=======================================
+Post Answer Button
+=======================================
+*/
+
+#postAnswerButton {
+    border: none;
+    padding: 10px;
+    background: #0095ff;
+    color: white;
+    border-top: 1px solid #73C5FF;
+    text-shadow: 1px 1px #666;
+    border-radius: 3px;
+    outline: none;
+    margin: 0;
+    margin-top: 20px;
+}
+
+#postAnswerButton:focus {
+    outline: none;
+}
+
+#postAnswerButton:hover {
+    cursor: pointer;
+    outline: none;
+    background: #0077cc;
+    border-top: 1px solid #0095ff;
+}
+
+#postAnswerButton:active {
+    background: #0064bd;
+    border-top: 1px solid #0064bd;
+}
+
+/*
+=======================================
+Live Answer Preview
+=======================================
+*/
+
+#answerBodyPreview {
+	margin: 20px 0;
+}
+
+#answerBodyPreview p,
+#answerBodyPreview ul,
+#answerBodyPreview li {
+	font: 13px "Lato";
+	text-align: justify;
+	margin-top: 0;
+}
+
+#answerBodyPreview p code {
+	background: #f3f3f3;
+	padding: 1px 4px;
+}
+
+#answerBodyPreview a {
+	color: #23629F;
+}
+
+#answerBodyPreview blockquote {
+	border-left: 3px solid #ccc;
+	margin-left: 0;
+	padding-left: 10px;
+}
+
+#answerBodyPreview blockquote:first-child {
+	margin-top: 0;
+}
+
+#answerBodyPreview h1 {
+    font: bold 21px "Lato";
+}
+
+#answerBodyPreview h1:first-child {
+    margin-top: 0;
+}
+
+#answerBodyPreview h2 {
+    font: bold 19px "Lato";
+}
+
+#answerBodyPreview h2:first-child {
+    margin-top: 0;
+}
+
+#answerBodyPreview h3 {
+    font: bold 17px "Lato";
+}
+
+#answerBodyPreview h3:first-child {
+    margin-top: 0;
+}
+
+#answerBodyPreview hr {
+    border: none;
+    background: #ccc;
+    height: 1px;
+}
+
+/*
+===============================================================================
+
+FOOTER
+
+===============================================================================
+*/
+
+footer {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 40px;
+    padding-top: 40px;
+}
+
+footer > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer > ul li {
+    display: inline;
+    margin: 0 2px;
+}
+
+#logoutForm {
+    margin: 0;
+}
+
+#logoutButton,
+#loginButton,
+#signUpButton {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    color: #666;
+    font: 12px "Lato";
+    outline: none;
+}
+
+#logoutButton:hover {
+    cursor: pointer;
+}
+
+#logoutButton:focus {
+    outline: none;
+}
+
+/*
+=======================================
+Copyright Label
+=======================================
+*/
+
+#copyrightLabel {
+    color: #666;
+    font: 12px "Lato";
+    margin-top: 5px;
+}
